@@ -1,8 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+
 import ReactQuill from "react-quill"; // Import the Rich Text Editor
 import "react-quill/dist/quill.snow.css"; // Import Quill CSS
 // Dummy data for previous comments (replace this with actual API call)
+
+
+
+// Dynamically import ReactQuill
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
+
+
 const previousCommentsData = [
   {
     comment: "<p><strong><em>This is a great post!</em></strong></p>",
@@ -80,12 +90,14 @@ export default function HomepageComments() {
 
       {/* Rich Text Editor Section */}
       <div className="  mt-8">
-        <ReactQuill
-          value={editorContent}
-          onChange={setEditorContent}
-          placeholder="Search comments..."
-          className="rounded-lg bg-black z-2 "
-        />
+      {typeof window !== "undefined" && (
+          <ReactQuill
+            value={editorContent}
+            onChange={setEditorContent}
+            placeholder="Search comments..."
+            className="rounded-lg bg-black z-2"
+          />
+        )}
         <div className="text-center">
         <button
           onClick={handleCommentSubmit}
