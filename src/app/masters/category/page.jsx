@@ -91,7 +91,7 @@ export default function Category() {
       {/* Display all added categories in a table */}
       <div className="mx-3">
         <h2 className="text-lg font-bold mb-2">Added Categories:</h2>
-        <div className="overflow-x-auto border border-gray-300 rounded-lg p-4">
+        <div className="overflow-x-auto border border-gray-300 rounded-lg p-2">
           {categories.length === 0 ? (
             <p className="text-gray-600">No categories added yet.</p>
           ) : (

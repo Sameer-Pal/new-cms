@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState,useRef, useEffect } from 'react';
 // import Calendar from "../Calender/Calender.jsx";
 import MitrayuLogo from '../../assets/MitrayuLogo.jpg'; // Adjust the path as necessary
 function NavLink({ to, children }) {
@@ -132,8 +132,23 @@ import { useRouter } from 'next/navigation'; // Import useRouter
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
-    const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+    // const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null); // Dropdown toggle state
+    const navbarRef = useRef(); // Reference for navbar
+
+    // closing dropdown when click anywher outside toggle 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+                setActiveDropdown(null);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [navbarRef]);
 
     const toggleDropdown = (dropdown) => {
         if (activeDropdown === dropdown) {
@@ -176,7 +191,7 @@ export default function Navbar() {
     };
     return (
         <>
-            <nav className="relative flex col filter drop-shadow-md bg-grey border border-white px-4 py-2 h-20   z-50 items-center relative">
+            <nav ref={navbarRef} className="relative flex col filter drop-shadow-md bg-grey border border-white px-4 py-2 h-20   z-50 items-center relative">
                 <MobileNav open={open} setOpen={setOpen} />
                 <div className="w-3/12 flex items-center">
                 <a href="/">
@@ -258,7 +273,7 @@ export default function Navbar() {
         </div>
     )}
 </div>
-
+{/* src\app\compliance\create-edit-search\page.tsx */}
 
 
 
@@ -269,10 +284,11 @@ export default function Navbar() {
                         />
                             {activeDropdown === 'compliance' && (
                                 <div className="absolute width-auto left-1/2 transform -translate-x-1/2  mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden">
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Create / Edit / Search</a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Create Detail - Multiple
+                    <a href="/compliance/create-edit-search"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Create / Edit / Search</a>
+                  
+                    <a href="/compliance/"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Create Detail - Multiple
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Amendment
+                    <a href="/compliance/amendment"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Amendment
                     </a>
                     <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Future / Archived / Deleted
                     </a>

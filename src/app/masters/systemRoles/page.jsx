@@ -179,7 +179,7 @@ export default function SystemRoles() {
 
       {/* Modal for Assigning Role */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center p-2 justify-center bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex items-center p-2 justify-center bg-black  z-50  bg-opacity-50 backdrop-blur-sm">
           <div className="bg-white text-black rounded-lg p-6 w-full max-w-md max-h-[80vh] overflow-y-auto relative">
             {/* Close Button */}
             <button

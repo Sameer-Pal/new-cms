@@ -103,7 +103,7 @@ export default function Employees() {
       </div>
 
       {showAddEmployee && (
-  <div className="fixed inset-0 flex items-center p-2 justify-center bg-black bg-opacity-50 z-50">
+  <div className="fixed inset-0 flex items-center p-2 justify-center bg-black z-50  bg-opacity-50 backdrop-blur-sm">
     <div className="bg-gray-100 text-black rounded-lg p-6 w-full max-w-md max-h-[80vh]  overflow-y-auto relative">
       {/* Close Button */}
       <button
@@ -323,7 +323,9 @@ export default function Employees() {
           {employees.length === 0 ? (
             <p>No employees found.</p>
           ) : (
-            <table className="min-w-full   border border-gray-100 mt-4">
+            <div className="mt-4 p-2 border border-gray-200 rounded">
+            <div className="overflow-x-auto m-auto">
+            <table className="min-w-full   border border-gray-100 ">
               <thead>
                 <tr className="bg-gray-900 ">
                   <th className="border border-gray-100 p-2">User ID</th>
@@ -351,6 +353,8 @@ export default function Employees() {
                 ))}
               </tbody>
             </table>
+            </div>
+            </div>
           )}
         </div>
       </div>

@@ -3,7 +3,7 @@ import Calendar from '../components/Calender/Calender'; // Import your Calendar 
 
 export default function CalendarPage() {
     return (
-        <div className="rounded-lg shadow-lg px-4 max-w-screen-sm w-full">
+        <div>
             <Calendar /> {/* Render the Calendar component */}
         </div>
     );

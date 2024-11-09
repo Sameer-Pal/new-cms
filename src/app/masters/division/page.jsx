@@ -131,6 +131,8 @@ export default function Division() {
       <div className="mx-3">
         <h2 className="text-lg font-bold mb-2">Added Divisions:</h2>
         <div className="overflow-x-auto">
+        <div className="mt-4 p-2 border border-gray-200 rounded">
+        <div className="overflow-x-auto m-auto">
           <table className="min-w-full table-auto border-collapse border border-gray-300">
             <thead>
               <tr className="bg-gray-900">
@@ -155,6 +157,8 @@ export default function Division() {
               )}
             </tbody>
           </table>
+          </div>
+          </div>
         </div>
       </div>
     </div>

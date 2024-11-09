@@ -163,7 +163,9 @@ export default function Location() {
       {/* Display fetched locations */}
       <div className="mx-3 mt-6">
         <h2 className="text-lg font-bold mb-2">Fetched Locations from Database:</h2>
-        <div className="overflow-x-auto">
+        <div className="mt-4 p-2 border border-gray-200 rounded">
+
+        <div className="overflow-x-auto m-auto">
           <table className="min-w-full table-auto border-collapse border border-gray-300">
             <thead>
               <tr className="bg-gray-900 hover:text-gray-800">
@@ -190,6 +192,7 @@ export default function Location() {
               )}
             </tbody>
           </table>
+        </div>
         </div>
       </div>
     </div>
