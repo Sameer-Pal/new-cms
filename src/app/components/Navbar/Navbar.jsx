@@ -55,9 +55,7 @@ function MobileNav({ open, setOpen }) {
         <div className={`fixed top-0 left-0 h-screen w-screen bg-[#262626] transform z-25 ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-500 ease-in-out filter drop-shadow-lg`}>
         <div className="flex items-center justify-center filter drop-shadow-lg h-20">
             <a href="/">
-               
-                <span className="ml-2 text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
-
+                <span className="text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
             </a>
         </div>
     
@@ -214,7 +212,7 @@ export default function Navbar() {
                         className="h-10 w-auto rounded-md"
                     />
 
-<span className="ml-2 text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
+<span className="ml-2  text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
 </a>                   </div>
 
                 <div className="w-9/12 flex justify-end items-center">

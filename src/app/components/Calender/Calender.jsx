@@ -125,16 +125,16 @@ const Calendar = () => {
 <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
       <div className="flex flex-col lg:flex-row w-full px-4 lg:px-10 justify-start items-start gap-8">
         {/* Event List Section */}
-        <div className="w-full  lg:w-3/12 py-2 px-4 bg-white rounded-lg mt-5 shadow-lg">
-          <div className="py-5 text-2xl font-extrabold text-center text-[#262626]">
+        <div className="w-full  lg:w-3/12 py-2 px-4 bg-[#F5F5F5] rounded-lg mt-5 shadow-lg">
+          <div className="py-5 text-2xl font-extrabold text-center text-[#262626]  shadow-xl drop-shadow-md">
             Compliances 
           </div>
-          <ul className="space-y-4 mb-2">
+          <ul className="space-y-4 mb-2  rounded-2xl">
             {currentEvents.length === 0 ? (
-              <div className="italic text-center text-gray-400">No Events Present</div>
+              <div className="italic mt-2  text-center text-gray-500">No Events Present</div>
             ) : (
               currentEvents.map((event) => (
-                <li key={event.id} className="border border-gray-200 shadow px-4 py-2 rounded-md text-blue-800">
+                <li key={event.id} className="border border-gray-200 shadow px-4 py-2 rounded-md text-blue-800 bg-[#FFFFFF]">
                   {event.title}
                   <br />
                   <label className="text-slate-950">
@@ -154,7 +154,7 @@ const Calendar = () => {
 
         {/* Calendar Section */}
         <div className="w-full  lg:w-9/12 mt-8 ">
-          <div className="flex flex-col items-center justify-center gap-4 mb-4 py-1 shadow-md border-b border-gray-300 ">
+          <div className="flex flex-col items-center justify-center gap-4 mb-4 py-2 shadow-xl bg-[#F5F5F5] border-b border-gray-300 ">
             {/* Month and Year Selectors */}
             <div className="flex flex-wrap justify-center gap-4">
               <select
@@ -217,50 +217,62 @@ const Calendar = () => {
       {/* Dialog for Adding Event */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Add New Event Details</DialogTitle>
-          </DialogHeader>
+        <DialogHeader>
+  <DialogTitle className="text-2xl font-bold text-gray-800">Add New Event Details</DialogTitle>
+</DialogHeader>
 
-          {/* Event Title Input */}
-          <input
-            type="text"
-            placeholder="Event Title"
-            value={newEventTitle}
-            onChange={(e) => setNewEventTitle(e.target.value)}
-            required
-            className="border border-gray-200 p-3 text-black rounded-md text-lg w-full mb-4"
-          />
+{/* Event Title Input */}
+<div className="mb-6">
+  <label htmlFor="eventTitle" className="block text-lg font-medium text-gray-700 mb-2">
+    Event Title
+  </label>
+  <input
+    id="eventTitle"
+    type="text"
+    placeholder="Enter event title"
+    value={newEventTitle}
+    onChange={(e) => setNewEventTitle(e.target.value)}
+    required
+    className="border border-gray-300 p-3 rounded-lg text-black text-base shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 w-full"
+  />
+</div>
 
-          {/* Status Options */}
-          <div className="space-y-4">
-            <label className="font-medium">Status</label>
-            <div className="flex flex-col gap-2">
-              {[
-                "Compiled",
-                "Pending",
-                "PendingRejected",
-                "Future",
-                "ChecklistCompiled",
-                "ChecklistPending",
-              ].map((statusOption) => (
-                <label key={statusOption}>
-                  <input
-                    type="checkbox"
-                    value={statusOption}
-                    checked={status.includes(statusOption)}
-                    onChange={(e) => {
-                      if (e.target.checked) {
-                        setStatus((prevStatus) => [...prevStatus, statusOption]);
-                      } else {
-                        setStatus((prevStatus) => prevStatus.filter((s) => s !== statusOption));
-                      }
-                    }}
-                  />
-                  {statusOption}
-                </label>
-              ))}
-            </div>
-          </div>
+{/* Status Options */}
+<div className="mb-6">
+  <label className="block text-lg font-medium text-[#262626] mb-4">Select Status</label>
+  <div className="grid grid-cols-2 gap-4">
+    {[
+      "Compiled",
+      "Pending",
+      "PendingRejected",
+      "Future",
+      "ChecklistPending",
+      "ChecklistCompiled",
+    ].map((statusOption) => (
+      <label
+        key={statusOption}
+        className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-lg"
+      >
+        <input
+          type="checkbox"
+          value={statusOption}
+          checked={status.includes(statusOption)}
+          onChange={(e) => {
+            if (e.target.checked) {
+              setStatus((prevStatus) => [...prevStatus, statusOption]);
+            } else {
+              setStatus((prevStatus) =>
+                prevStatus.filter((s) => s !== statusOption)
+              );
+            }
+          }}
+          className="w-5 h-5 text-[#262626] rounded border-gray-300 focus:ring focus:ring-indigo-200"
+        />
+        <span className="text-gray-700 text-base">{statusOption}</span>
+      </label>
+    ))}
+  </div>
+</div>
 
           {/* Save Button */}
           <button onClick={AddNewEvent} className="bg-blue-600 text-white p-3 rounded-md mt-4 w-full">

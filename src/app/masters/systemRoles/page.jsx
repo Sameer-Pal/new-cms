@@ -155,16 +155,16 @@ const paths = [
 
         {/* Display User Data */}
         {userData.length > 0 && (
-          <div className="mt-4 p-2 border border-gray-200 rounded">
+          <div className="mt-4 p-2 border border-gray-200 rounded-xl bg-[#d4d4d4]">
             <div className="overflow-x-auto m-auto">
-              <table className="min-w-full bg-black border border-gray-300">
+              <table className="min-w-full bg-[#F5F5F5] bg- border border-gray-300">
                 <thead>
-                  <tr className="bg-gray-900 text-white">
-                    <th className="border px-4 py-2">ID</th>
-                    <th className="border px-4 py-2">Name</th>
-                    <th className="border px-4 py-2">Email</th>
-                    <th className="border px-4 py-2">Assign Role</th>
-                    <th className="border px-4 py-2">Division/Location/Function</th>
+                  <tr className="bg-[#262626] text-white">
+                    <th className="border px-4 py-2 text-white">ID</th>
+                    <th className="border px-4 py-2 text-white">Name</th>
+                    <th className="border px-4 py-2 text-white">Email</th>
+                    <th className="border px-4 py-2 text-white">Assign Role</th>
+                    <th className="border px-4 py-2 text-white">Division/Location/Function</th>
                   </tr>
                 </thead>
                 <tbody>
