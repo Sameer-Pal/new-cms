@@ -125,32 +125,39 @@ const Calendar = () => {
 <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
       <div className="flex flex-col lg:flex-row w-full px-4 lg:px-10 justify-start items-start gap-8">
         {/* Event List Section */}
-        <div className="w-full  lg:w-3/12 py-2 px-4 bg-[#F5F5F5] rounded-lg mt-5 shadow-lg">
-          <div className="py-5 text-2xl font-extrabold text-center text-[#262626]  shadow-xl drop-shadow-md">
-            Compliances 
-          </div>
-          <ul className="space-y-4 mb-2  rounded-2xl">
-            {currentEvents.length === 0 ? (
-              <div className="italic mt-2  text-center text-gray-500">No Events Present</div>
-            ) : (
-              currentEvents.map((event) => (
-                <li key={event.id} className="border border-gray-200 shadow px-4 py-2 rounded-md text-blue-800 bg-[#FFFFFF]">
-                  {event.title}
-                  <br />
-                  <label className="text-slate-950">
-                    {formatDate(event.start, {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                    <br />
-                    <span>Status: {event.status}</span>
-                  </label>
-                </li>
-              ))
-            )}
-          </ul>
-        </div>
+        <div className="w-full lg:w-3/12 py-2 px-4 bg-[#F5F5F5] rounded-lg mt-5 shadow-lg">
+  {/* Compliances Text */}
+  <div className="py-5 text-2xl font-extrabold text-center text-[#262626] mb-5  drop-shadow-md">
+    Compliances
+  </div>
+  
+  {/* Compliance List */}
+  <ul className="space-y-4 mx-5 rounded-2xl">
+    {currentEvents.length === 0 ? (
+      <div className="italic mt-2 text-center text-gray-500">No Events Present</div>
+    ) : (
+      currentEvents.map((event) => (
+        <li
+          key={event.id}
+          className="border border-gray-200 shadow px-4 py-2 rounded-md text-blue-800 bg-[#FFFFFF]"
+        >
+          {event.title}
+          <br />
+          <label className="text-slate-950">
+            {formatDate(event.start, {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+            <br />
+            <span>Status: {event.status}</span>
+          </label>
+        </li>
+      ))
+    )}
+  </ul>
+</div>
+
 
         {/* Calendar Section */}
         <div className="w-full  lg:w-9/12 mt-8 ">
