@@ -96,30 +96,30 @@ const Calendar = () => {
     }
   };
 
-  const addCustomStyles = () => {
-    if (calendarRef.current && calendarRef.current.el) {
-      const calendarContainer = calendarRef.current.el;
-      const prevButton = calendarContainer.querySelector(".fc-prev-button");
-      const nextButton = calendarContainer.querySelector(".fc-next-button");
+  // const addCustomStyles = () => {
+  //   if (calendarRef.current && calendarRef.current.el) {
+  //     const calendarContainer = calendarRef.current.el;
+  //     const prevButton = calendarContainer.querySelector(".fc-prev-button");
+  //     const nextButton = calendarContainer.querySelector(".fc-next-button");
 
-      [prevButton, nextButton].forEach((button) => {
-        if (button) {
-          button.classList.add("text-white", "bg-transparent", "border-none");
-          const svg = button.querySelector("svg");
-          if (svg) {
-            svg.classList.add("text-white", "w-5", "h-5");
-          }
-        }
-      });
-    }
-  };
+  //     [prevButton, nextButton].forEach((button) => {
+  //       if (button) {
+  //         button.classList.add("text-white", "bg-transparent", "border-none");
+  //         const svg = button.querySelector("svg");
+  //         if (svg) {
+  //           svg.classList.add("text-white", "w-5", "h-5");
+  //         }
+  //       }
+  //     });
+  //   }
+  // };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      addCustomStyles();
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     addCustomStyles();
+  //   }, 100);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
 <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">

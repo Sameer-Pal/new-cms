@@ -1,5 +1,6 @@
 "use client"
 import { useState,useRef, useEffect } from 'react';
+import Image from 'next/image'
 // import Calendar from "../Calender/Calender.jsx";
 import MitrayuLogo from '../../assets/MitrayuLogo.jpg'; // Adjust the path as necessary
 
@@ -213,7 +214,7 @@ export default function Navbar() {
                 <MobileNav open={open} setOpen={setOpen} />
                 <div className="w-3/12 flex items-center">
                 <a href="/" className="flex items-center">
-                    <img
+                    <Image 
                         src="http://54.253.86.15/CMS/Images/MitrayuLogo.jpg"
                         alt=""
                         className="h-10 w-auto rounded-md"

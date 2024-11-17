@@ -71,7 +71,7 @@ export default function Employees() {
 
 
 <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
-{/* bg-[#FAF9F6] */}
+{/* bg-[FAF9F6] */}
   
       {/* Page Title */}
       <div className="text-4xl font-bold text-center my-5">Employee Management</div>
@@ -91,11 +91,7 @@ export default function Employees() {
           >
             Show All Employees
           </button>
-            {/* Tooltip text isuse in displayin over navabr toggle 
-            */}
-  {/* <div className="absolute left-0 mt-1 w-max px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-    Click to get all employees
-  </div> */}
+ 
         </div>
 
         {/* Add Employee Button */}
