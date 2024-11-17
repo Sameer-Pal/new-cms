@@ -125,7 +125,7 @@ const Calendar = () => {
 <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
       <div className="flex flex-col lg:flex-row w-full px-4 lg:px-10 justify-start items-start gap-8">
         {/* Event List Section */}
-        <div className="w-full lg:w-3/12 py-2 px-4 bg-white rounded-lg shadow-lg">
+        <div className="w-full  lg:w-3/12 py-2 px-4 bg-white rounded-lg mt-5 shadow-lg">
           <div className="py-5 text-2xl font-extrabold text-center text-[#262626]">
             Compliances 
           </div>
@@ -209,7 +209,6 @@ const Calendar = () => {
             eventClick={handleEventClick}
             eventsSet={(events) => setCurrentEvents(events)}
             initialEvents={typeof window !== "undefined" ? JSON.parse(localStorage.getItem("events") || "[]") : []}
-            datesSet={addCustomStyles}
           />
           </div>
         </div>

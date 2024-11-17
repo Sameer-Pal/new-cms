@@ -55,13 +55,7 @@ function MobileNav({ open, setOpen }) {
         <div className={`fixed top-0 left-0 h-screen w-screen bg-[#262626] transform z-25 ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-500 ease-in-out filter drop-shadow-lg`}>
         <div className="flex items-center justify-center filter drop-shadow-lg h-20">
             <a href="/">
-                {/* {/* <img 
-                    src="http://54.253.86.15/CMS/Images/MitrayuLogo.jpg"
-                    alt="Mitrayu Logo"
-                    className="h-8 rounded-md transition-transform transform hover:scale-110 duration-300 ease-in-out" // Add hover scale effect
-                /> 
-                
-                < */}
+               
                 <span className="ml-2 text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
 
             </a>
@@ -215,7 +209,7 @@ export default function Navbar() {
                 <div className="w-3/12 flex items-center">
                 <a href="/" className="flex items-center">
                     <Image 
-                        src="http://54.253.86.15/CMS/Images/MitrayuLogo.jpg"
+                        src=""
                         alt=""
                         className="h-10 w-auto rounded-md"
                     />
