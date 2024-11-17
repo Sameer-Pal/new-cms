@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 
 export default function SystemRoles() {
   const [searchType, setSearchType] = useState("employee");
@@ -41,6 +42,12 @@ export default function SystemRoles() {
         setUserData([]); // Reset to an empty array if no selection is made
     }
 };
+  
+const paths = [
+  { label: "Home", link: "/" },
+  { label: "Masters", link: "/masters" },
+  { label: "SystemRoles", link: "/masters/systemRoles" },
+];
 
   const handleAssignRole = (e) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -55,18 +62,26 @@ export default function SystemRoles() {
   };
 
   return (
+    <>
+    <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+      <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+        <Breadcrumbs paths={paths} />
+      </div>
+    </div>
     
-    <div className="flex h-screen bg-white ">
+    <div className="flex h-screen p-4 m-2 border border bg-[#FFFFFF] rounded-xl ">
+     {/* <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl"> */}
+
       {/* Right Side: Search and Scrollable Options */}
-      <div className="w-full p-4  bg-black h-full overflow-auto"> {/* Changed to w-full */}
+      <div className="w-full p-4   h-full overflow-auto"> {/* Changed to w-full */}
       <h2 className="text-4xl font-bold text-center my-5">System Roles</h2>
 
-      <div className="flex flex-row justify-between rounded p-4 items-center mb-2 bg-black border border-white  ">
+      <div className="flex flex-row sm:flex flex-row justify-between  py-4 items-center  border-b border-gray-700  ">
         <h2 className="text-2xl font-semibold ">Search Options</h2>
 
         {/* Search Options (Radio Buttons) */}
-        <div className="">
-          <label className="mr-4">
+        <div className="sm:flex flex-wrap lg: flex flex-row">
+          <label className="mr-4 ">
             <input
               type="radio"
               name="searchType"
@@ -91,7 +106,8 @@ export default function SystemRoles() {
         </div>
         </div>
         {/* Scrollable Options */}
-        <div className="h-auto overflow-y-auto border border-gray-300 p-4 rounded">
+
+        <div className="h-auto overflow-y-auto border mt-4 border-gray-300 p-4 rounded">
           {searchType === "employee" ? (
             <div>
               <h3 className="text-lg font-semibold mb-2">Employees</h3>
@@ -130,7 +146,7 @@ export default function SystemRoles() {
         {/* Button to Fetch Data */}
         <div className="text-center mt-2">
         <button
-          className="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 justify-center transition duration-300"
+          className="mt-4 bg-blue-700 text-white py-2 px-4 rounded-lg hover:bg-green-600 justify-center transition duration-300"
           onClick={fetchUserData}
         >
           Show User Data
@@ -297,5 +313,6 @@ export default function SystemRoles() {
         </div>
       )}
     </div>
+    </>
   );
 }

@@ -39,16 +39,23 @@ export default function Category() {
   };
 
   return (
-    <div className="mb-10">
-      <Breadcrumbs paths={paths} />
-      <div className="text-4xl font-bold text-center my-5 text-white ">Category</div>
+
+    <>   
+      <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div> 
+
+<div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
+      <div className="text-4xl font-bold text-center my-5 ">Category</div>
 
       {/* Form to add new category */}
       <form onSubmit={handleSubmit} className="mt-4 mx-3">
         {/* Container for input fields */}
-        <div className="border border-gray-300 rounded-lg p-4 mb-4">
+        <div className="border border-gray-300 rounded-lg p-4 mb-4  bg-[#d4d4d4]">
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="shortName">
+            <label className="block text-gray-700 text-sm font-bold mb-2 " htmlFor="shortName">
               Short Name
             </label>
             <input
@@ -91,15 +98,15 @@ export default function Category() {
       {/* Display all added categories in a table */}
       <div className="mx-3">
         <h2 className="text-lg font-bold mb-2">Added Categories:</h2>
-        <div className="overflow-x-auto border border-gray-300 rounded-lg p-2">
+        <div className="overflow-x-auto border border-gray-300 rounded-lg p-2  bg-[#d4d4d4]">
           {categories.length === 0 ? (
             <p className="text-gray-600">No categories added yet.</p>
           ) : (
-            <table className="min-w-full border-collapse border border-gray-300">
+            <table className="min-w-full border-collapse border border-gray-300 bg-[#F5F5F5]">
               <thead>
-                <tr className="bg-gray-900">
-                  <th className="border border-gray-300 px-4 py-2">Short Name</th>
-                  <th className="border border-gray-300 px-4 py-2">Title</th>
+                <tr className="bg-[#262626] text-left">
+                  <th className="border border-gray-300 px-4 py-2 text-white">Short Name</th>
+                  <th className="border border-gray-300 px-4 py-2 text-white">Title</th>
                 </tr>
               </thead>
               <tbody>
@@ -115,5 +122,7 @@ export default function Category() {
         </div>
       </div>
     </div>
+    </>
+
   );
 }

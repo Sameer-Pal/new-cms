@@ -1,121 +1,119 @@
 /* Custom Quill editor styles */
 .custom-quill-editor {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for visual depth */
-    margin-bottom: 20px; /* Space between editor and other content */
-    /* margin-left: 20px;
-    margin-right: 20px; */
-  }
-  
-  /* Styling the toolbar */
-  .custom-quill-editor .ql-toolbar {
-    background-color: white; /* Dark grey toolbar */
-    color: white;
-    border-bottom: 2px solid #2a2a2a; /* Add border for separation */
-    padding: 10px;
-    border-radius: 10px 10px 0 0; /* Rounded corners at the top */
-  }
-  
-  /* Style toolbar buttons */
-  .custom-quill-editor .ql-toolbar button {
-    background: transparent;
-    color: white;
-    border: none;
-    padding: 5px;
-    margin: 0 3px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-  }
-  
-  .custom-quill-editor .ql-toolbar button:hover {
-    background-color: #555; /* Slightly darker on hover */
-  }
-  
-  .custom-quill-editor .ql-toolbar .ql-active {
-    /* background-color: wheat; Blue background for active buttons */
-    color: black;
-  }
-  
-  .custom-quill-editor .ql-toolbar .ql-picker-label,
-  .custom-quill-editor .ql-toolbar .ql-picker-item {
-    color:black; /* Ensure dropdowns also have white text */
-  }
-  
-  /* Ensure the first font size option is visible by making it black */
-  .custom-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=""],
-  .custom-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=""] {
-    color: black; /* Black color for the default font size option */
-  }
-  
-  /* Styling the editor area */
-  .custom-quill-editor .ql-container {
-    background-color: #1a1a1a; /* Darker black background */
-    color: white; /* White text */
-    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
-  }
-  /* Change color of icons (bold, italics, etc.) */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for visual depth */
+  margin-bottom: 20px; /* Space between editor and other content */
+}
+
+/* Styling the toolbar */
+.custom-quill-editor .ql-toolbar {
+  background-color: #D4D4D4; /* Darker grey for more contrast */
+  color: white;
+  border-bottom: 2px solid #2a2a2a; /* Add border for separation */
+  padding: 10px;
+  border-radius: 10px 10px 0 0; /* Rounded corners at the top */
+}
+
+/* Style toolbar buttons */
+.custom-quill-editor .ql-toolbar button {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 5px;
+  margin: 0 3px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.custom-quill-editor .ql-toolbar button:hover {
+  background-color: #555; /* Slightly darker on hover */
+}
+
+.custom-quill-editor .ql-toolbar .ql-active {
+  color: black;
+}
+
+.custom-quill-editor .ql-toolbar .ql-picker-label,
+.custom-quill-editor .ql-toolbar .ql-picker-item {
+  color: black; /* Ensure dropdowns also have white text */
+}
+
+/* Ensure the first font size option is visible by making it black */
+.custom-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=""],
+.custom-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=""] {
+  color: black; /* Black color for the default font size option */
+}
+
+/* Styling the editor area */
+.custom-quill-editor .ql-container {
+  background-color: #1a1a1a; /* Darker black background for outer container */
+  border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+}
+
+/* The area where the content is written or pasted */
+.custom-quill-editor .ql-editor {
+  background-color: white; /* White background for the content area */
+  color: black; /* Black text inside the editor */
+  position: inherit;
+  min-height: 200px; /* Adjusted minimum height */
+  padding: 15px; /* Add padding for better spacing */
+  font-family: "Helvetica", "Arial", sans-serif; /* Cleaner font */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Change color of icons (bold, italics, etc.) */
 .custom-quill-editor .ql-toolbar button .ql-stroke,
 .custom-quill-editor .ql-toolbar button .ql-fill {
-stroke: black;
-
+  stroke: black;
 }
-  .custom-quill-editor .ql-editor {
-    position: inherit;
-    min-height: 200px; /* Adjusted minimum height */
-    padding: 15px; /* Add padding for better spacing */
-    font-family: "Helvetica", "Arial", sans-serif; /* Cleaner font */
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  /* Customize scrollbars in the editor */
-  .custom-quill-editor .ql-container::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .custom-quill-editor .ql-container::-webkit-scrollbar-thumb {
-    background-color: #555; /* Grey scrollbar thumb */
-    border-radius: 10px;
-  }
-  
-  .custom-quill-editor .ql-container::-webkit-scrollbar-track {
-    background-color: #1a1a1a; /* Match editor background */
-  }
-  
-  /* Enhance button hover effect */
-  .custom-quill-editor .ql-toolbar button:hover {
-    background-color: #444; /* Slightly darker grey on hover */
-    color: #fff;
-  }
-  
-  /* Style for the editor placeholder text */
-  .custom-quill-editor .ql-editor.ql-blank::before {
-    color: #888; /* Light grey for placeholder text */
-    font-style: italic;
-  }
-  
-  /* Style tooltips */
-  .custom-quill-editor .ql-tooltip {
-    background-color: #333;
-    color: white;
-    border: none;
-  }
-  
 
-  .custom-quill-editor .ql-tooltip {
-    background-color: #333; /* Dark background for tooltip */
-    color: white;
-    margin-left: 150px;
-    border: none;
-  }
-  .custom-quill-editor .ql-tooltip input {
-    margin-left: 30px;
-    background-color: #f5f5f5; /* Light background for link input box */
-    color: black; /* Black text inside the link input box */
-    border: 1px solid #ccc; /* Light border */
-    padding: 5px;
-    border-radius: 4px;
-  }
-  
-  
+/* Customize scrollbars in the editor */
+.custom-quill-editor .ql-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-quill-editor .ql-container::-webkit-scrollbar-thumb {
+  background-color: #555; /* Grey scrollbar thumb */
+  border-radius: 10px;
+}
+
+.custom-quill-editor .ql-container::-webkit-scrollbar-track {
+  background-color: white; /* Match editor background */
+}
+
+/* Enhance button hover effect */
+.custom-quill-editor .ql-toolbar button:hover {
+  background-color: #444; /* Slightly darker grey on hover */
+  color: #fff;
+}
+
+/* Style for the editor placeholder text */
+.custom-quill-editor .ql-editor.ql-blank::before {
+  color: #888; /* Light grey for placeholder text */
+  font-style: italic;
+}
+
+/* Style tooltips */
+.custom-quill-editor .ql-tooltip {
+  background-color: #333;
+  color: white;
+  border: none;
+}
+
+.custom-quill-editor .ql-tooltip {
+  background-color: #333; /* Dark background for tooltip */
+  color: white;
+  margin-left: 150px;
+  border: none;
+}
+
+.custom-quill-editor .ql-tooltip input {
+  margin-left: 30px;
+  background-color: #f5f5f5; /* Light background for link input box */
+  color: black; /* Black text inside the link input box */
+  border: 1px solid #ccc; /* Light border */
+  padding: 5px;
+  border-radius: 4px;
+}

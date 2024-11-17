@@ -2,6 +2,7 @@
 import { useState,useRef, useEffect } from 'react';
 // import Calendar from "../Calender/Calender.jsx";
 import MitrayuLogo from '../../assets/MitrayuLogo.jpg'; // Adjust the path as necessary
+
 function NavLink({ to, children }) {
     return <a href={to} className={`mx-4`}>{children}</a>
 }
@@ -17,18 +18,17 @@ function MobileNav({ open, setOpen }) {
             setActiveDropdown(dropdownName);
         }
     };
-
     const ToggleButton = ({ label, isOpen, onToggle }) => {
         return (
             <button
                 onClick={onToggle}
-                className="flex items-center justify-start text-xl font-medium my-4 text-white focus:outline-none w-full"
+                className="flex items-center justify-start text-xl font-medium my-4 text-white focus:outline-none w-full transform hover:scale-105 transition-transform duration-200"
             >
-                <span className="mr-2">{label}</span>
+                <span className="mr-2 text-white">{label}</span>
                 <svg
-                    className={`w-4 h-4 transition-transform duration-500 transform ${isOpen ? "rotate-180" : ""}`}
+                    className={`w-4 h-4 transition-transform duration-300 transform ${isOpen ? "rotate-180" : ""}`}
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
+                    fill="White"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                 >
@@ -51,78 +51,91 @@ function MobileNav({ open, setOpen }) {
         router.push('/calendar'); // Navigate to the calendar route
     };
     return (
-<div className={`fixed top-0 left-0 h-screen w-screen bg-black/90 transform  z-25  ${open ? "-translate-x-0 " : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md`}>
-<div className="flex items-center justify-center filter drop-shadow-md bg-black h-20">
-<a href="/">
-    <img 
-         src="http://54.253.86.15/CMS/Images/MitrayuLogo.jpg"
-        alt="Mitrayu Logo" 
-        className="h-8 rounded-md " // Adjust height as needed
-    />
-</a>            </div>
-
-            <div className="flex flex-col ml-4 bg-opacity-90">
-                <a className="text-xl font-medium my-4 text-white" href="/about" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
-                    Home
-                </a>
-
-                {/* Masters Dropdown */}
-                <div>
-                    <ToggleButton label="Masters" isOpen={activeDropdown === 'masters'} onToggle={() => toggleDropdown('masters')} />
-                    <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'masters' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/employees"> Employees</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/division">Division</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/location">Location</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/function">Function</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/category">Cateogry</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/act">Act</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/systemRoles">System Rules</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/masters/homePageComments">Home Page Comments</a>
-                    </div>
-                </div>
-
-                {/* Compliance Dropdown */}
-                <div>
-                    <ToggleButton label="Compliance" isOpen={activeDropdown === 'compliance'} onToggle={() => toggleDropdown('compliance')} />
-                    <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'compliance' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
-                        <a className="text-lg font-normal my-2 text-white" href="/compliance/submenu1">Submenu 1</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/compliance/submenu2">Submenu 2</a>
-                    </div>
-                </div>
-
-                {/* Dashboard Dropdown */}
-                <div>
-                    <ToggleButton label="Dashboard" isOpen={activeDropdown === 'dashboard'} onToggle={() => toggleDropdown('dashboard')} />
-                    <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'dashboard' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
-                        <a className="text-lg font-normal my-2 text-white" href="/dashboard/overview">Overview</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/dashboard/stats">Stats</a>
-                    </div>
-                </div>
-
-                {/* Reports Dropdown */}
-                <div>
-                    <ToggleButton label="Reports" isOpen={activeDropdown === 'reports'} onToggle={() => toggleDropdown('reports')} />
-                    <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'reports' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
-                        <a className="text-lg font-normal my-2 text-white" href="/dashboard/overview">Overview</a>
-                        <a className="text-lg font-normal my-2 text-white" href="/dashboard/stats">Stats</a>
-                    </div>
-                </div>
-
-                <div className="flex flex-col  transition-all duration-300 pr-2 mt-4">
-
-<button 
-    className="text-white text-lg border border-white rounded px-2 py-1 hover:bg-white hover:text-black transition duration-300" // Hide on smaller screens
-    onClick={handleCalendarToggle}
->
-    Open Calendar
-</button>
-</div>
-
-
+        <div className={`fixed top-0 left-0 h-screen w-screen bg-[#262626] transform z-25 ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-500 ease-in-out filter drop-shadow-lg`}>
+        <div className="flex items-center justify-center filter drop-shadow-lg h-20">
+            <a href="/">
+                {/* {/* <img 
+                    src="http://54.253.86.15/CMS/Images/MitrayuLogo.jpg"
+                    alt="Mitrayu Logo"
+                    className="h-8 rounded-md transition-transform transform hover:scale-110 duration-300 ease-in-out" // Add hover scale effect
+                /> 
                 
-                
+                < */}
+                <span className="ml-2 text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
+
+            </a>
+        </div>
+    
+        <div className="flex flex-col ml-4 bg-opacity-90">
+            <a 
+                className="text-xl font-medium my-4 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform"
+                href="/" 
+                onClick={() => setTimeout(() => { setOpen(!open) }, 100)}
+            >
+                Home
+            </a>
+    
+            {/* Masters Dropdown */}
+            <div>
+                <ToggleButton label="Masters" isOpen={activeDropdown === 'masters'} onToggle={() => toggleDropdown('masters')} />
+                <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'masters' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/employees">Employees</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/division">Division</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/location">Location</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/function">Function</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/category">Category</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/act">Act</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/systemRoles">System Rules</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/masters/homePageComments">Home Page Comments</a>
+                </div>
+            </div>
+    
+            {/* Compliance Dropdown */}
+            <div>
+                <ToggleButton label="Compliance" isOpen={activeDropdown === 'compliance'} onToggle={() => toggleDropdown('compliance')} />
+                <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'compliance' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/create-edit-search"> Create/Edit/Search</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/create-detail-mutliple">Create/Detail/Multiple</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/create-edit-search">CreateEditSearch</a>
+
+                  
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/future-archieved-deleted">FutureArchievedDeleted</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/replaceAuthority">Replace Authority</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/reportEventOccurence">Report Event</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/adminDetailVerification">Admin Detail Verification</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/compliance/compliance-header-count">Compliance Header Count </a>
+                </div>
+            </div>
+    
+            {/* Dashboard Dropdown */}
+            <div>
+                <ToggleButton label="Dashboard" isOpen={activeDropdown === 'dashboard'} onToggle={() => toggleDropdown('dashboard')} />
+                <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'dashboard' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/overview">Overview</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/stats">Stats</a>
+                </div>
+            </div>
+    
+            {/* Reports Dropdown */}
+            <div>
+                <ToggleButton label="Reports" isOpen={activeDropdown === 'reports'} onToggle={() => toggleDropdown('reports')} />
+                <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'reports' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/overview">Overview</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/stats">Stats</a>
+                </div>
+            </div>
+    
+            <div className="flex flex-col transition-all duration-300 pr-2 mt-4">
+                <button 
+                    className="text-white text-lg border border-white rounded px-4 py-2 hover:bg-yellow-500 hover:text-black transition duration-300 transform hover:scale-105 ease-in-out"
+                    onClick={handleCalendarToggle}
+                >
+                    Open Calendar
+                </button>
             </div>
         </div>
+    </div>
+    
     );
 }
 
@@ -165,13 +178,14 @@ export default function Navbar() {
                 onClick={onToggle}
                 className="flex items-center justify-start text-xl font-medium my-4 text-white focus:outline-none w-full"
             >
-                <span className="mr-2">{label}</span>
+                <span className="mr-1 text-[#ffffff]">{label}</span>
                 <svg
-                    className={`w-4 h-4 transition-transform duration-500 transform ${isOpen ? "rotate-180" : ""}`}
+
+                    className={`w-4 h-4 transition-transform   duration-500 transform ${isOpen ? "rotate-180" : ""}`}
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
+                    fill="#ffffff"
                     viewBox="0 0 24 24"
-                    stroke="currentColor"
+                    stroke="ffffff"
                 >
                     <path
                         strokeLinecap="round"
@@ -191,16 +205,22 @@ export default function Navbar() {
     };
     return (
         <>
-            <nav ref={navbarRef} className="relative flex col filter drop-shadow-md bg-grey border border-white px-4 py-2 h-20   z-50 items-center relative">
+
+            <nav ref={navbarRef}      className="relative flex items-center justify-between px-6 py-8 h-10 z-50 
+             backdrop-blur-2xl bg-[#262626] shadow-md text-white"
+             
+>
                 <MobileNav open={open} setOpen={setOpen} />
                 <div className="w-3/12 flex items-center">
-                <a href="/">
-    <img 
-         src="http://54.253.86.15/CMS/Images/MitrayuLogo.jpg"
-        alt="Mitrayu Logo" 
-        className="h-8 rounded-md" // Adjust height as needed
-    />
-</a>                      </div>
+                <a href="/" className="flex items-center">
+                    <img
+                        src="http://54.253.86.15/CMS/Images/MitrayuLogo.jpg"
+                        alt=""
+                        className="h-10 w-auto rounded-md"
+                    />
+
+<span className="ml-2 text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
+</a>                   </div>
 
                 <div className="w-9/12 flex justify-end items-center">
                     {/* Hamburger button for mobile view */}
@@ -213,96 +233,132 @@ export default function Navbar() {
                     {/* Desktop version of the dropdown menu */}
                     <div className="hidden md:flex space-x-6">
                         {/* Masters Dropdown */}
-                        <div className="relative" >
+                        <div className="relative">
+
     <ToggleButton
         label="Masters"
         isOpen={activeDropdown === 'masters'}
         onToggle={() => toggleDropdown('masters')}
         className="bg-gray-800 text-white rounded-lg px-4 py-2 hover:bg-gray-900 transition duration-300"
     />
+
     {activeDropdown === 'masters' && (
-        <div className="absolute width-auto left-1/2 transform -translate-x-1/2  mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden">
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
             <a
                 href="/masters/employees"
-                className="flex justify-center items-center text-white hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-white hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 Employees
             </a>
             <a
                 href="/masters/division"
-                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 Division
             </a>
             <a
                 href="/masters/location"
-                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 Location
             </a>
             <a
                 href="/masters/function"
-                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 Function
             </a>
             <a
                 href="/masters/category"
-                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 Category
             </a>
             <a
                 href="/masters/act"
-                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 Act
             </a>
             <a
                 href="/masters/systemRoles"
-                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 System Roles
             </a>
             <a
                 href="/masters/homePageComments"
-                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
             >
                 Home Page Comments
             </a>
         </div>
     )}
 </div>
-{/* src\app\compliance\create-edit-search\page.tsx */}
 
-
-
-
+    
                         {/* Compliance Dropdown */}
-                        <div className="relative">
-                        <ToggleButton label="Compliance" isOpen={activeDropdown === 'compliance'} onToggle={() => toggleDropdown('compliance')}         className="bg-gray-800 text-white rounded-lg px-4 py-2 hover:bg-gray-900 transition duration-300"
-                        />
-                            {activeDropdown === 'compliance' && (
-                                <div className="absolute width-auto left-1/2 transform -translate-x-1/2  mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden">
-                    <a href="/compliance/create-edit-search"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Create / Edit / Search</a>
-                  
-                    <a href="/compliance/"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Create Detail - Multiple
-                    </a>
-                    <a href="/compliance/amendment"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Amendment
-                    </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Future / Archived / Deleted
-                    </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Replace Authority
-                    </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Compliance Header Count
-                    </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Report Event Occurence
-                    </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Admin Detail Verification</a>
-                                   
-                                </div>
-                            )}
-                        </div>
+<div className="relative">
+    <ToggleButton
+        label="Compliance"
+        isOpen={activeDropdown === 'compliance'}
+        onToggle={() => toggleDropdown('compliance')}
+        className="bg-gray-800 text-white rounded-lg px-4 py-2 hover:bg-gray-900 transition duration-300"
+    />
+    {activeDropdown === 'compliance' && (
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
+            <a
+                href="/compliance/create-edit-search"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Create / Edit / Search
+            </a>
+            <a
+                href="/compliance/create-detail-mutliple"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Create Detail - Multiple
+            </a>
+            <a
+                href="/compliance/amendment"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Amendment
+            </a>
+            <a
+                href="/compliance/future-archieved-deleted"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Future / Archived / Deleted
+            </a>
+            <a
+                href="/compliance/replaceAuthority"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Replace Authority
+            </a>
+            <a
+                href="/compliance/compliance-header-count"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Compliance Header Count
+            </a>
+            <a
+                href="/compliance/reportEventOccurence"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Report Event Occurrence
+            </a>
+            <a
+                href="/compliance/adminDetailVerification"
+                className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+            >
+                Admin Detail Verification
+            </a>
+        </div>
+    )}
+</div>
+
 
                         {/* Dashboard Dropdown */}
                         <div className="relative">
@@ -327,9 +383,9 @@ Statutory Requirement
                             {activeDropdown === 'reports' && (
                                 <div className="absolute width-auto left-1/2 transform -translate-x-1/2  mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden">
                                            <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Submenu 1</a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">View Event Checklist
+                    <a href="/reports/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">View Event Checklist
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Global Search
+                    <a href="/reports/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Global Search
                     </a>
                     <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Event Occurrence Report
                     </a>

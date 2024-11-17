@@ -77,14 +77,21 @@ export default function Function() {
   };
 
   return (
-    <div className="mb-10">
-      <Breadcrumbs paths={paths} />
+    <>
+    <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+      <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+        <Breadcrumbs paths={paths} />
+      </div>
+    </div>
+
+    <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
+   
       <div className="text-4xl font-bold text-center my-5">Function Page</div>
 
       {/* Form to add new location */}
       <form onSubmit={handleSubmit} className="mt-4 mx-3">
         {/* Container for input fields */}
-        <div className="border border-gray-300 rounded-lg p-4 mb-4">
+        <div className="border border-gray-300 rounded-lg p-4 mb-4  bg-[#d4d4d4]">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="shortName">
               Short Name
@@ -146,19 +153,19 @@ export default function Function() {
       </form>
 
       {/* Display all added locations in a table */}
-      <div className="mx-3">
+      <div className="mx-3 ">
         <h2 className="text-lg font-bold mb-2">Added Locations:</h2>
-        <div className="overflow-x-auto border border-gray-300 rounded-lg p-2">
+        <div className="overflow-x-auto border border-gray-300 rounded-lg p-2 bg-[#d4d4d4]">
           {locations.length === 0 ? (
             <p className="text-gray-600">No locations added yet.</p>
           ) : (
             
-            <table className="min-w-full border-collapse border border-gray-300">
+            <table className="min-w-full border-collapse border border-gray-300 bg-[#F5F5F5] ">
               <thead>
-                <tr className="bg-gray-900">
-                  <th className="border border-gray-300 px-4 py-2">Short Name</th>
-                  <th className="border border-gray-300 px-4 py-2">Full Name</th>
-                  <th className="border border-gray-300 px-4 py-2">Divisions</th>
+                <tr className="bg-[#262626]">
+                  <th className="border border-gray-300 px-4 py-2 text-white">Short Name</th>
+                  <th className="border border-gray-300 px-4 py-2 text-white">Full Name</th>
+                  <th className="border border-gray-300 px-4 py-2 text-white">Divisions</th>
                 </tr>
               </thead>
               <tbody>
@@ -175,5 +182,6 @@ export default function Function() {
         </div>
       </div>
     </div>
+    </>
   );
 } 

@@ -7,7 +7,7 @@ import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
 // import '../../assets/sqr_tick_green.gif';
 // import '../../assets/sqr_yellow.jpg';
 
-const CreateEditSearch = () => {
+const ReportEventOccurence = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
   const [searchParams, setSearchParams] = useState({
     complianceType: '',
@@ -43,7 +43,7 @@ const CreateEditSearch = () => {
   const paths = [
     { label: "Home", link: "/" },
     { label: "Compliance", link: "/compliance" },
-    { label: "Create/Edit/Search", link: "/compliance/ create-edit-search" },
+    { label: "ReportEvent", link: "/compliance/ reportEventOccurence" },
   ];
 
   const handleReset = () => {
@@ -385,4 +385,4 @@ const CreateEditSearch = () => {
   );
 };
 
-export default CreateEditSearch;
+export default ReportEventOccurence;

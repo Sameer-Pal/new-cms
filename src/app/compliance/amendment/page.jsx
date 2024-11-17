@@ -81,26 +81,32 @@ function Amendment() {
   
   
     return (
-      <div >
+      <>
+      <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden ">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div>
+
+
+<div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
   
             {/* Breadcrumbs */}
   
   
-     <div className='p-2 flex justify-between '>
-    <Breadcrumbs paths={paths} />
+     {/* <div className='p-2 flex justify-between '>
   
     <div className="flex flex-wrap justify-end ">
-      {/* Array of GIFs */}
           <img
             
               src="../../assets/sqr_yellow.jpg"
               className="w-10 h-10 rounded-lg "
           />
     </div>
-  </div>
+  </div> */}
   
   {/* Main Search Section */}
-  <div className="mt-6 m-4 p-4 border border-gray-300 bg-gray-10 rounded-lg"> 
+  <div className="mt-6 m-4 p-4 border border-gray-300  rounded-lg bg-[#d4d4d4]"> 
      <div className="flex flex-col sm:flex-row justify-between items-center">
       <div className='w-full sm:w-2/3 mb-4 sm:mb-0'>
         {/* Normal Search Bar */}
@@ -110,7 +116,7 @@ function Amendment() {
           placeholder="Search..."
           value={searchParams.normalSearchTerm}
           onChange={handleInputChange}
-          className="block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         />
       </div>
       
@@ -126,7 +132,7 @@ function Amendment() {
         {/* Show All Button */}
         <button
           onClick={() => console.log("Show all data")} // Implement show all logic here
-          className="mb-2 sm:mb-0 sm:ml-4 px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 transition duration-200"
+          className="mb-2 sm:mb-0 sm:ml-4 px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 transition duration-200 whitespace-nowrap"
         >
           Show All
         </button>
@@ -134,7 +140,7 @@ function Amendment() {
         {/* Open Compliance Search Button */}
         <button
           onClick={handleOpenModal}
-          className="sm:ml-4 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition duration-200"
+          className="sm:ml-4 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition duration-200 whitespace-nowrap"
         >
           Advanced Search
         </button>
@@ -157,7 +163,7 @@ function Amendment() {
                 &times;
               </button>
               
-              <h2 className="text-lg text-black font-semibold mb-4">Compliance Search</h2>
+              <h2 className="text-lg text-black font-semibold mb-4">Advanced Search</h2>
               
               <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-3 gap-4">
                 {/* Compliance Type */}
@@ -167,7 +173,7 @@ function Amendment() {
                     name="complianceType"
                     value={searchParams.complianceType}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Compliance Type</option>
                     <option value="Type A">Type A</option>
@@ -183,7 +189,7 @@ function Amendment() {
                     name="requisite"
                     value={searchParams.requisite}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-gray-800  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-[#F5F5F5]  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Requisite</option>
                     <option value="Requisite 1">Requisite 1</option>
@@ -199,7 +205,7 @@ function Amendment() {
                     name="priority"
                     value={searchParams.priority}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-gray-800  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-[#F5F5F5]  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Priority</option>
                     <option value="High">High</option>
@@ -215,7 +221,7 @@ function Amendment() {
                     name="division"
                     value={searchParams.division}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Division</option>
                     <option value="Division 1">Division 1</option>
@@ -231,7 +237,7 @@ function Amendment() {
                     name="location"
                     value={searchParams.location}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Location</option>
                     <option value="Location 1">Location 1</option>
@@ -247,7 +253,7 @@ function Amendment() {
                     name="function"
                     value={searchParams.function}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Function</option>
                     <option value="Function 1">Function 1</option>
@@ -263,7 +269,7 @@ function Amendment() {
                     name="category"
                     value={searchParams.category}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Category</option>
                     <option value="Category 1">Category 1</option>
@@ -279,7 +285,7 @@ function Amendment() {
                     name="act"
                     value={searchParams.act}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Act</option>
                     <option value="Act 1">Act 1</option>
@@ -295,7 +301,7 @@ function Amendment() {
                     name="authority"
                     value={searchParams.authority}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Authority</option>
                     <option value="Authority 1">Authority 1</option>
@@ -311,7 +317,7 @@ function Amendment() {
                     name="employee"
                     value={searchParams.employee}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5]  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Employee</option>
                     <option value="Employee 1">Employee 1</option>
@@ -330,7 +336,7 @@ function Amendment() {
         placeholder="Enter search term"
         value={searchParams.searchTerm}
         onChange={handleInputChange}
-        className="mt-1 block w-full lg:w-1/2 px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        className="mt-1 block w-full lg:w-1/2 px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       />
     </div>
   
@@ -372,6 +378,7 @@ function Amendment() {
           </div>
         )}
       </div>
+      </>
     );
   };
   

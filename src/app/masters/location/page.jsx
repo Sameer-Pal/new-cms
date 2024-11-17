@@ -92,16 +92,22 @@ export default function Location() {
   }, []); // Empty dependency array to run only once when the component mounts
 
   return (
-    <div className="mb-10">
-      <Breadcrumbs paths={paths} />
+    <>
+    <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div>
+
+<div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
       <div className="text-4xl font-bold text-center my-5">Location Page</div>
 
       {/* Form to add new location */}
       <form onSubmit={handleSubmit} className="mt-4 mx-3">
         {/* Container for input fields */}
-        <div className="border border-gray-300 rounded-lg p-4 mb-2">
+        <div className="border border-gray-300 rounded-lg p-4 mb-2 bg-[#d4d4d4]">
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="shortName">
+            <label className="block text-gray-700 text-sm font-bold mb-2 " htmlFor="shortName">
               Short Name
             </label>
             <input
@@ -163,12 +169,12 @@ export default function Location() {
       {/* Display fetched locations */}
       <div className="mx-3 mt-6">
         <h2 className="text-lg font-bold mb-2">Fetched Locations from Database:</h2>
-        <div className="mt-4 p-2 border border-gray-200 rounded">
+        <div className="mt-4 p-2 bg-[#d4d4d4] rounded-xl">
 
-        <div className="overflow-x-auto m-auto">
-          <table className="min-w-full table-auto border-collapse border border-gray-300">
+        <div className="overflow-x-auto m-auto mb-4">
+          <table className="min-w-full bg-[#F5F5F5] table-auto border-collapse border border-gray-100 ">
             <thead>
-              <tr className="bg-gray-900 hover:text-gray-800">
+              <tr className="bg-[#262626] hover:text-gray-800">
                 <th className="px-4 py-2 border border-gray-300 text-left text-white">Short Name</th>
                 <th className="px-4 py-2 border border-gray-300 text-left text-white">Full Name</th>
                 <th className="px-4 py-2 border border-gray-300 text-left text-white">Mapped to Divisions</th>
@@ -196,5 +202,6 @@ export default function Location() {
         </div>
       </div>
     </div>
+    </>
   );
 }

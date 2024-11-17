@@ -62,15 +62,22 @@ export default function Employees() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-4">
-      {/* Breadcrumbs */}
-      <Breadcrumbs paths={paths} />
+    <>
+<div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div>
 
+
+<div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
+{/* bg-[#FAF9F6] */}
+  
       {/* Page Title */}
       <div className="text-4xl font-bold text-center my-5">Employee Management</div>
 
       {/* Search Bar Section */}
-      <div className="bg-black border justify-between border-white rounded-lg p-4 mt-2 shadow-lg flex flex-col sm:flex-row sm:items-center">
+      <div className="bg-[#d4d4d4] border justify-between border-white rounded-lg p-4 mt-2 shadow-lg flex flex-col sm:flex-row sm:items-center">
         {/* Search bar */}
         <div className="mb-4 sm:mb-0 w-full sm:w-auto">
           <SearchBar className="w-full" /> {/* Ensure SearchBar takes full width */}
@@ -317,25 +324,27 @@ export default function Employees() {
 
 
       {/* Employee List */}
-      <div className="mt-4 overflow-x-auto">
+      <div className="mt-4 overflow-x-auto ">
         <h2 className="text-3xl	 mt-2 text-center  py-2 font-semibold">Employee List</h2>
-        <div className="mt-2">
+        <div className="mt-2 rounded-xl">
           {employees.length === 0 ? (
-            <p>No employees found.</p>
-          ) : (
-            <div className="mt-4 p-2 border border-gray-200 rounded">
+            <div className="bg-[#D4D4D4] p-2 text-center rounded -xl">
+            <p>No employees found. Click "Show All Employees" </p>
+            </div>
+          ) : ( 
+            <div className="mt-4 p-2 bg-[#d4d4d4] border border-gray-200 rounded-xl">
             <div className="overflow-x-auto m-auto">
-            <table className="min-w-full   border border-gray-100 ">
+            <table className="min-w-full bg-[#F5F5F5]  border border-gray-100 ">
               <thead>
-                <tr className="bg-gray-900 ">
-                  <th className="border border-gray-100 p-2">User ID</th>
-                  <th className="border border-gray-100 p-2">Employee Name</th>
-                  <th className="border border-gray-100 p-2">Designation</th>
-                  <th className="border border-gray-100 p-2">Email ID</th>
-                  <th className="border border-gray-100 p-2">Division</th>
-                  <th className="border border-gray-100 p-2">Location</th>
-                  <th className="border border-gray-100 p-2">Function</th>
-                  <th className="border border-gray-100 p-2">Company</th>
+                <tr className="bg-[#262626] ">
+                  <th className="border border-gray-100 p-2 text-white">User ID</th>
+                  <th className="border border-gray-100 p-2 text-white">Employee Name</th>
+                  <th className="border border-gray-100 p-2 text-white">Designation</th>
+                  <th className="border border-gray-100 p-2 text-white">Email ID</th>
+                  <th className="border border-gray-100 p-2 text-white">Division</th>
+                  <th className="border border-gray-100 p-2 text-white">Location</th>
+                  <th className="border border-gray-100 p-2 text-white">Function</th>
+                  <th className="border border-gray-100 p-2 text-white">Company</th>
                 </tr>
               </thead>
               <tbody>
@@ -357,7 +366,29 @@ export default function Employees() {
             </div>
           )}
         </div>
+
+
+        
       </div>
     </div>
+    </>
   );
 }
+
+// breadcrums
+
+{/* <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden ">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div>  */}
+
+// div main container 
+// <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
+
+
+
+// table hedaer- bg-[#262626]
+// table contianer  bg -[#D4D4D4]
+// child contienr bg-[#d4d4d4]
+// inside table  bg-[#F5F5F5]

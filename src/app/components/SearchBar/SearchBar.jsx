@@ -5,7 +5,6 @@ import { useState } from 'react';
 export default function SearchBar() {
   const [search, setSearch] = useState('');
 
-  // Predefined list of items
   const [list] = useState([
     'Apple',
     'Banana',
@@ -25,13 +24,13 @@ export default function SearchBar() {
   );
 
   return (
-<div className="w-full"> {/* Set to w-full to occupy full width of parent */}
+<div className="w-full  rounded"> {/* Set to w-full to occupy full width of parent */}
   <input
     type="text"
     value={search}
     onChange={(e) => setSearch(e.target.value)}
     placeholder="Search..."
-    className="w-full p-2 border text-black border-gray-300 rounded" // Add classes for padding, border, and rounding
+    className="w-full p-2 border text-black border-gray-300  bg-[#FFFFFF] rounded" // Add classes for padding, border, and rounding
   />
 
   {/* Only display the filtered list if search is not empty */}
@@ -43,7 +42,6 @@ export default function SearchBar() {
     </div>
   )}
 
-  {/* Show message if no results are found */}
   {search && filteredList.length === 0 && (
     <div className="mt-2 text-gray-500">No results found.</div>
   )}

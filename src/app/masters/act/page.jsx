@@ -69,9 +69,15 @@ export default function Act() {
   };
 
   return (
-    <div className="mx-4"> {/* Add margin on left and right */}
-      <Breadcrumbs paths={paths} />
-      <div className="text-4xl font-bold text-center my-5 text-white">Acts</div>
+    <>
+     <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div> 
+
+<div className="min-h-screen  p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
+      <div className="text-4xl font-bold text-center my-5 ">Acts</div>
 
       <div className="shadow-lg rounded-lg p-6 mb-6"> {/* Rectangular div */}
         <div className="flex justify-between items-center border-b border-gray-700 pb-4"> {/* Flexbox for alignment */}
@@ -80,9 +86,9 @@ export default function Act() {
               id="category"
               value={selectedCategory}
               onChange={handleCategoryChange}
-              className="h-10 p-2 mr-2 text-gray-800 leading-tight rounded-lg border border-gray-600 focus:outline-none focus:ring focus:ring-gray-400 transition duration-150 ease-in-out"
+              className="h-10 p-2 mr-2 bg-[#F5F5F5] text-gray-800 leading-tight rounded-lg border border-gray-600 focus:outline-none focus:ring focus:ring-gray-400 transition duration-150 ease-in-out"
             >
-              <option value="" className="text-gray-500">Select category</option>
+              <option value="" className="text-gray- bg-[#d4d4d4]">Select category</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id} className="text-gray-800">
                   {category.name}
@@ -92,23 +98,23 @@ export default function Act() {
           </div>
           
           <div>
-            <h2 className="text-lg font-bold text-white">Total Acts: {totalActs}</h2>
+            <h2 className="text-lg font-bold ">Total Acts: {totalActs}</h2>
           </div>
         </div>
 
         {/* Display records found based on selected category */}
-        <div className="mt-6">
-          <h2 className="text-lg font-bold mb-2 text-white">Records Found:</h2>
-          <div className="border border-gray-600 rounded-lg p-4 overflow-x-auto"> {/* Allow horizontal scrolling */}
+        <div className="mt-6 ">
+          <h2 className="text-lg font-bold mb-2 ">Records Found:</h2>
+          <div className=" bg-[#D4D4D4] border border-gray-600  rounded-lg p-4 overflow-x-auto "> {/* Allow horizontal scrolling */}
             {records.length === 0 ? (
-              <p className="text-gray-400">No records found for the selected category.</p>
+              <p className="text-black">No records found for the selected category.</p>
             ) : (
-              <table className="min-w-full bg-black text-white border border-gray-600">
+              <table className="min-w-full border border-gray-600 bg-[#F5F5F5]">
                 <thead>
-                  <tr className="bg-gray-900">
-                    <th className="border px-4 py-2">Short Name</th>
-                    <th className="border px-4 py-2">Category</th>
-                    <th className="border px-4 py-2">Title</th>
+                  <tr className="bg-[#262626]">
+                    <th className="border px-4 py-2 text-white">Short Name</th>
+                    <th className="border px-4 py-2 text-white">Category</th>
+                    <th className="border px-4 py-2 text-white">Title</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -126,5 +132,6 @@ export default function Act() {
         </div>
       </div>
     </div>
+    </>
   );
 }

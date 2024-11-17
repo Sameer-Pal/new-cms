@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 
 function ComplianceHeaderCount() {
   // Mock data simulating database records
@@ -61,16 +62,33 @@ function ComplianceHeaderCount() {
     setData(mockData);
   }, []);
 
+
+  const paths = [
+    { label: "Home", link: "/" },
+    { label: "Masters", link: "/masters" },
+    { label: "Header Counter", link: "/masters/Header Counter" },
+  ];
+
   return (
-    <div className="p-4">
+    <>
+<div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div>
+
+
+
+
+<div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
       {/* First row with select dropdown */}
-      <div className="mb-6 mt-8">
+      <div className="mb-6 mt-8 rounded-xl">
   {/* <label htmlFor="categorySelect" className="block text-sm font-medium text-black mb-2">
     Select Category
   </label> */}
   <select
     id="categorySelect"
-    className="block w-full lg:w-1/2 h-10 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-black"
+    className="block w-full lg:w-1/2 h-10 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-[#F5F5F5]"
     style={{ maxHeight: '200px', overflowY: 'auto', width: '100%' }} // Ensure full width and add scroll
   >
     <option>Select All Categories</option>
@@ -95,32 +113,33 @@ function ComplianceHeaderCount() {
 </div>
 
       {/* Table with the new theme */}
-      <div className="mt-4 p-2 max-w-full border border-gray-200 rounded">
-      <div className="overflow-x-auto">  {/* Enable horizontal scroll for small screens */}
-      <table className="min-w-full table-auto border border-gray-100"> 
+      <div className="mt-4 p-2 max-w-full border border-gray-200 rounded bg-[#D4D4D4]">
+      <div className="overflow-x-auto  ">  {/* Enable horizontal scroll for small screens */}
+      <table className="w-full table-auto border border-gray-100 bg-[#F5F5F5]">  
+        {/*change that scroll part  */}
           <thead>
-              <tr className="bg-gray-900 text-white">
-                <th className="border border-gray-100 p-2">Category</th>
-                <th className="border border-gray-100 p-2">Act</th>
-                <th className="border border-gray-100 p-2">Headers</th>
-                <th className="border border-gray-100 p-2">aaaa</th>
-                <th className="border border-gray-100 p-2">BENGALURU</th>
-                <th className="border border-gray-100 p-2">BHUBANESWAR</th>
-                <th className="border border-gray-100 p-2">CHENNAI</th>
-                <th className="border border-gray-100 p-2">COCHIN</th>
-                <th className="border border-gray-100 p-2">DELHI</th>
-                <th className="border border-gray-100 p-2">GUWAHATI</th>
-                <th className="border border-gray-100 p-2">Haryana</th>
-                <th className="border border-gray-100 p-2">HYDERABAD</th>
-                <th className="border border-gray-100 p-2">INN</th>
-                <th className="border border-gray-100 p-2">Jharkhand</th>
-                <th className="border border-gray-100 p-2">KOLKATA</th>
-                <th className="border border-gray-100 p-2">Kumar</th>
-                <th className="border border-gray-100 p-2">LSho</th>
-                <th className="border border-gray-100 p-2">MAHAPE</th>
-                <th className="border border-gray-100 p-2">Rajasthan</th>
-                <th className="border border-gray-100 p-2">Uttar Pradesh</th>
-                <th className="border border-gray-100 p-2">Yelahanka</th>
+              <tr className="bg-[#262626] text-white">
+                <th className="border border-gray-100 p-2 text-white">Category</th>
+                <th className="border border-gray-100 p-2 text-white">Act</th>
+                <th className="border border-gray-100 p-2 text-white">Headers</th>
+                <th className="border border-gray-100 p-2 text-white">aaaa</th>
+                <th className="border border-gray-100 p-2 text-white">BENGALURU</th>
+                <th className="border border-gray-100 p-2 text-white">BHUBANESWAR</th>
+                <th className="border border-gray-100 p-2 text-white">CHENNAI</th>
+                <th className="border border-gray-100 p-2 text-white">COCHIN</th>
+                <th className="border border-gray-100 p-2 text-white">DELHI</th>
+                <th className="border border-gray-100 p-2 text-white">GUWAHATI</th>
+                <th className="border border-gray-100 p-2 text-white">Haryana</th>
+                <th className="border border-gray-100 p-2 text-white">HYDERABAD</th>
+                <th className="border border-gray-100 p-2 text-white">INN</th>
+                <th className="border border-gray-100 p-2 text-white">Jharkhand</th>
+                <th className="border border-gray-100 p-2 text-white">KOLKATA</th>
+                <th className="border border-gray-100 p-2 text-white">Kumar</th>
+                <th className="border border-gray-100 p-2 text-white">LSho</th>
+                <th className="border border-gray-100 p-2 text-white">MAHAPE</th>
+                <th className="border border-gray-100 p-2 text-white">Rajasthan</th>
+                <th className="border border-gray-100 p-2 text-white">Uttar Pradesh</th>
+                <th className="border border-gray-100 p-2 text-white">Yelahanka</th>
               </tr>
             </thead>
             <tbody>
@@ -154,6 +173,7 @@ function ComplianceHeaderCount() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

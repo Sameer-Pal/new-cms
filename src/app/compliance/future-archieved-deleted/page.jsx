@@ -89,33 +89,28 @@ const FutureArchievedDeleted = () => {
   
   
     return (
-      <div >
+      <>
+      <div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+        <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+          <Breadcrumbs paths={paths} />
+        </div>
+      </div>
+      
+      <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
   
-            {/* Breadcrumbs */}
   
-  
-     <div className='p-2 flex justify-between '>
-    <Breadcrumbs paths={paths} />
-  
-    {/* <div className="flex flex-wrap justify-end ">
-          <img
-            
-              src="../../assets/sqr_yellow.jpg"
-              className="w-10 h-10 rounded-lg "
-          />
-    </div> */}
-  </div>
+   
   
   {/* Main Search Section */}
-  <div className="mt-6 m-4 p-4 border border-gray-300 rounded-lg">
+  <div className="mt-6 m-4 p-4 border border-gray-300 rounded-lg bg-[#D4D4D4]">
 
 
   {/* First row for radio options */}
-  <div className="mb-6 p-4 border border-gray-500 rounded-md">
+  <div className="mb-6 p-4 border border-gray-500 rounded-md bg-[#F5F5F5] rounded-xl">
 
   {/* only for mobile screen size make it as view choices and open a form when user clicks on button "view choices" having button  */}
   
-    <div className="mt-2 flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+    <div className="mt-2 flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 ">
       {/* Radio for 'View Future' */}
       <label className="inline-flex items-center">
         <input
@@ -125,7 +120,7 @@ const FutureArchievedDeleted = () => {
           onChange={handleRadioChange} // Handle change here
           className="text-indigo-600 focus:ring-indigo-500 border-gray-300"
         />
-        <span className="ml-2 text-white">View Future</span>
+        <span className="ml-2">View Future</span>
       </label>
 
       {/* Radio for 'View Archived' */}
@@ -137,7 +132,7 @@ const FutureArchievedDeleted = () => {
           onChange={handleRadioChange}
           className="text-indigo-600 focus:ring-indigo-500 border-gray-300"
         />
-        <span className="ml-2 text-white">View Archived</span>
+        <span className="ml-2 ">View Archived</span>
       </label>
 
       {/* Radio for 'View Deleted' */}
@@ -149,7 +144,7 @@ const FutureArchievedDeleted = () => {
           onChange={handleRadioChange}
           className="text-indigo-600 focus:ring-indigo-500 border-gray-300"
         />
-        <span className="ml-2 text-white">View Deleted</span>
+        <span className="ml-2 ">View Deleted</span>
       </label>
     </div>
   </div>
@@ -163,7 +158,7 @@ const FutureArchievedDeleted = () => {
           placeholder="Search..."
           value={searchParams.normalSearchTerm}
           onChange={handleInputChange}
-          className="block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         />
       </div>
       
@@ -220,7 +215,7 @@ const FutureArchievedDeleted = () => {
                     name="complianceType"
                     value={searchParams.complianceType}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Compliance Type</option>
                     <option value="Type A">Type A</option>
@@ -236,7 +231,7 @@ const FutureArchievedDeleted = () => {
                     name="requisite"
                     value={searchParams.requisite}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-gray-800  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-[#F5F5F5]  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Requisite</option>
                     <option value="Requisite 1">Requisite 1</option>
@@ -252,7 +247,7 @@ const FutureArchievedDeleted = () => {
                     name="priority"
                     value={searchParams.priority}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-gray-800  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300  bg-[#F5F5F5]  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Priority</option>
                     <option value="High">High</option>
@@ -268,7 +263,7 @@ const FutureArchievedDeleted = () => {
                     name="division"
                     value={searchParams.division}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Division</option>
                     <option value="Division 1">Division 1</option>
@@ -284,7 +279,7 @@ const FutureArchievedDeleted = () => {
                     name="location"
                     value={searchParams.location}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Location</option>
                     <option value="Location 1">Location 1</option>
@@ -300,7 +295,7 @@ const FutureArchievedDeleted = () => {
                     name="function"
                     value={searchParams.function}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Function</option>
                     <option value="Function 1">Function 1</option>
@@ -316,7 +311,7 @@ const FutureArchievedDeleted = () => {
                     name="category"
                     value={searchParams.category}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Category</option>
                     <option value="Category 1">Category 1</option>
@@ -332,7 +327,7 @@ const FutureArchievedDeleted = () => {
                     name="act"
                     value={searchParams.act}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Act</option>
                     <option value="Act 1">Act 1</option>
@@ -348,7 +343,7 @@ const FutureArchievedDeleted = () => {
                     name="authority"
                     value={searchParams.authority}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Authority</option>
                     <option value="Authority 1">Authority 1</option>
@@ -364,7 +359,7 @@ const FutureArchievedDeleted = () => {
                     name="employee"
                     value={searchParams.employee}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-gray-800  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-[#F5F5F5]  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value="">Select Employee</option>
                     <option value="Employee 1">Employee 1</option>
@@ -383,7 +378,7 @@ const FutureArchievedDeleted = () => {
         placeholder="Enter search term"
         value={searchParams.searchTerm}
         onChange={handleInputChange}
-        className="mt-1 block w-full lg:w-1/2 px-4 py-2 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        className="mt-1 block w-full lg:w-1/2 px-4 py-2 border border-gray-300 bg-[#F5F5F5] rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       />
     </div>
   
@@ -425,6 +420,7 @@ const FutureArchievedDeleted = () => {
           </div>
         )}
       </div>
+      </>
     );
   };
 

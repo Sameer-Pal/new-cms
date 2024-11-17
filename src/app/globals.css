@@ -7,6 +7,99 @@
   --foreground: #171717;
 }
 
+@media (prefers-color-scheme: feSpecularLighting   ) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}          
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #3f3f3f, #919191); /* Gradient from top (#3f3f3f) to bottom (#1a1a1a) */
+  
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+* {
+  color: #000000; /* Makes all text black */
+}
+
+
+/* Ensure the header has a blue background */
+.fc-header-toolbar {
+  background-color: #336699; /* Tailwind blue-800 */
+  color: white;
+  padding: 10px 0; /* Add padding for spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0 !important; /* Ensure no margin below the header */
+}
+/* Style the prev and next buttons */
+.fc-header-toolbar .fc-prev-button,
+.fc-header-toolbar .fc-next-button {
+  color: white !important; /* White color for the buttons */
+  background-color: transparent !important; /* Transparent background */
+  stroke: black !important;
+  border: none !important; /* No border */
+}
+
+/* Ensure the prev and next buttons' SVG icons are white */
+.fc-header-toolbar .fc-prev-button svg,
+.fc-header-toolbar .fc-next-button svg {
+  fill: white !important; /* White icon color */
+  stroke: white !important;
+  width: 1.5rem; /* Optional: Adjust the size of the icons */
+  height: 1.5rem; /* Optional: Adjust the size of the icons */
+}
+
+/* Style the month/year title */
+.fc-header-toolbar .fc-toolbar-title {
+  font-size: 1.25rem; /* Adjust font size */
+  font-weight: bold; /* Bold the month/year text */
+  color: white;
+  margin: 0 10px; /* Space around the title */
+}
+
+/* Remove any margin/padding from the calendar days container */
+.fc-dayGridMonth-view {
+  margin-top: 0 !important; /* Remove any margin on top of the calendar grid */
+  padding-top: 0 !important; /* Remove padding above the calendar grid */
+}
+
+/* Make sure there's no additional space between the header and calendar days */
+.fc-dayGridMonth-view .fc-dayGridHeader {
+  margin-bottom: 0 !important; /* Remove extra space below the header row */
+}
+
+/* Remove unnecessary space between calendar and header */
+.fc-dayGridMonth-view .fc-dayGrid {
+  margin-top: 0 !important; /* Remove margin from the grid */
+}
+
+
+/* old  */
+
+/* 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -24,4 +117,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */

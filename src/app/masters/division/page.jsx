@@ -78,14 +78,24 @@ export default function Division() {
     }
   };
 
+  
   return (
-    <div className="mb-4">  
-      <Breadcrumbs paths={paths} />
-      <div className="text-4xl font-bold text-center my-6 text-white">Division</div>
+    <>
+
+
+<div className="p-2 m-2 border border-white bg-[#FFFFFF] rounded-xl flex">
+  <div className=" sm:w-1/3 flex items-center overflow-hidden truncate">
+    <Breadcrumbs paths={paths} />
+  </div>
+</div>
+
+
+    <div className="p-4 m-2 border border bg-[#FFFFFF] rounded-xl">  
+      <div className="text-4xl font-bold text-center my-6">Division</div>
 
       {/* Form to add new division */}
       <form onSubmit={handleSubmit} className="mt-4 mx-3">
-        <div className="border border-gray-300 rounded-lg p-4 mb-4">
+        <div className="border bg-[#d4d4d4]  border-gray-300 rounded-lg p-4 mb-4">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="shortName">
               Short Name
@@ -128,16 +138,17 @@ export default function Division() {
       </form>
 
       {/* Table to display added divisions */}
-      <div className="mx-3">
+      <div className="mx-3 ">
+      
         <h2 className="text-lg font-bold mb-2">Added Divisions:</h2>
-        <div className="overflow-x-auto">
-        <div className="mt-4 p-2 border border-gray-200 rounded">
-        <div className="overflow-x-auto m-auto">
-          <table className="min-w-full table-auto border-collapse border border-gray-300">
+        <div className="overflow-x-auto ">
+        <div className="mt-4 p-2 border border-gray-200 bg-[#d4d4d4]  rounded-xl">
+        <div className="overflow-x-auto m-auto ">
+          <table className="min-w-full table-auto border-collapse bg-[#F5F5F5] border border-gray-300">
             <thead>
-              <tr className="bg-gray-900">
-                <th className="px-4 py-2 border border-gray-300 text-left">Short Name</th>
-                <th className="px-4 py-2 border border-gray-300 text-left">Full Name</th>
+              <tr className="bg-[#262626]">
+                <th className="px-4 py-2 border border-gray-300 text-left text-white">Short Name</th>
+                <th className="px-4 py-2 border border-gray-300 text-left text-white">Full Name</th>
               </tr>
             </thead>
             <tbody>
@@ -162,5 +173,6 @@ export default function Division() {
         </div>
       </div>
     </div>
+    </>
   );
 }
