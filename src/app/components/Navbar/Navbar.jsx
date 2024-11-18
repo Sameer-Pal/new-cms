@@ -53,7 +53,7 @@ function MobileNav({ open, setOpen }) {
     };
     return (
         <div className={`fixed top-0 left-0 h-screen w-screen bg-[#262626] transform z-25 ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-500 ease-in-out filter drop-shadow-lg`}>
-        <div className="flex items-center justify-center filter drop-shadow-lg h-20">
+        <div className=" flex items-center justify-center filter drop-shadow-lg h-20">
             <a href="/">
                 <span className="text-2xl font-semibold text-[#ffffff]">Mitrayu</span>
             </a>
@@ -236,7 +236,7 @@ export default function Navbar() {
     />
 
     {activeDropdown === 'masters' && (
-        <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
+        <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
             <a
                 href="/masters/employees"
                 className="flex justify-center items-center text-white hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
@@ -299,7 +299,7 @@ export default function Navbar() {
         className="bg-gray-800 text-white rounded-lg px-4 py-2 hover:bg-gray-900 transition duration-300"
     />
     {activeDropdown === 'compliance' && (
-        <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
+        <div className="absolute left-1/2 transform -translate-x-1/2  bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
             <a
                 href="/compliance/create-edit-search"
                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
@@ -357,13 +357,15 @@ export default function Navbar() {
                         <div className="relative">
                         <ToggleButton label="Dashboard" isOpen={activeDropdown === 'dashboard'} onToggle={() => toggleDropdown('dashboard')} />
                             {activeDropdown === 'dashboard' && (
-                                <div className="absolute width-auto left-1/2 transform -translate-x-1/2  mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden">
-                                           <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Submenu 1</a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">
+        <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
+                                           <a href="/dashboard/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Submenu 1</a>
+                    <a href="/compliance/submenu1"                                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+                    >
 Statutory Requirement
 
 </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">
+                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+                    >
                     Internal Control</a>
                               
                                 </div>
@@ -374,23 +376,23 @@ Statutory Requirement
                      <div className="relative">
                         <ToggleButton label="Reports" isOpen={activeDropdown === 'reports'} onToggle={() => toggleDropdown('reports')} />
                             {activeDropdown === 'reports' && (
-                                <div className="absolute width-auto left-1/2 transform -translate-x-1/2  mt-1 bg-black shadow-lg rounded-md z-10 w-auto overflow-hidden">
-                                           <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Submenu 1</a>
-                    <a href="/reports/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">View Event Checklist
+        <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
+                                           <a href="/compliance/submenu1"                 className="flex justify-center items-start text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Submenu 1</a>
+                    <a href="/reports/EventChecklist"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Event Checklist
                     </a>
-                    <a href="/reports/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Global Search
+                    <a href="/reports/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Global Search
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Event Occurrence Report
+                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Event Occurrence Report
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Action Plan Report
+                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Action Plan Report
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">View Ownerwise Compliace Count
+                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105" >View Ownerwise Compliace Count
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">View Pending Checker Verification
+                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Pending Checker Verification
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">User Wise Summry Report
+                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">User Wise Summry Report
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200"></a>
+                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"></a>
                                    
                                 </div>
                             )}
