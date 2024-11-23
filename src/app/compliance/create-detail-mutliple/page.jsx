@@ -25,7 +25,7 @@ export default function CreateDetailMultiple() {
         <div className="flex flex-col md:flex-row gap-6 pb-6 border-b border-gray-300">
           <div className="w-full">
             <label className="block text-sm font-medium mb-2">Select Category</label>
-            <select className="w-full border border-gray-300 rounded p-3">
+            <select className="w-full border border-gray-300 rounded p-3 border-b border-gray-300">
               <option value="">Select Category</option>
             </select>
           </div>
