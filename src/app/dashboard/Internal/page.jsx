@@ -6,7 +6,9 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 // Register the required components
 ChartJS.register(ArcElement, Tooltip, Legend);
-const Internal = ({ paths }) => {
+
+
+const Internal = () => {
   const [categoryType, setCategoryType] = useState("category"); // Default to category view
   const [data, setData] = useState({
     category: {
