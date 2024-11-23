@@ -53,50 +53,47 @@ const Internal = () => {
         </div>
       </div>
     {/* Main Content */}
-    <div className="min-h-screen text-black py-6 px-4 m-2 bg-white rounded-xl flex flex-col md:flex-row gap-6 shadow-lg">
+    <div className="min-h-screen text-black py-6 m-2 bg-white rounded-xl flex flex-col md:flex-row gap-6 shadow-lg">
       {/* Left: Pie Chart Section */}
       <div className="flex-1">
-      <div className="mb-7">
-  <div className="flex flex-col lg:flex-row items-center justify-between gap-6 w-full">
-    <select
-      className="drop-shadow-lg border border-gray-300 p-3 rounded-md w-full lg:w-1/3 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-      value={categoryType}
-      onChange={(e) => setCategoryType(e.target.value)}
-    >
-      <option value="category">Category-wise</option>
-      <option value="division">Division-wise</option>
-    </select>
+        <div className="mb-4">
+          <select
+            className="border border-gray-300 p-2 rounded-md w-full text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={categoryType}
+            onChange={(e) => setCategoryType(e.target.value)}
+          >
+            <option value="category">Category-wise</option>
+            <option value="division">Division-wise</option>
+          </select>
+        </div>
 
-    {/* Date Range Inputs */}
-    <div className="flex flex-col lg:flex-row gap-6 w-full ml-2">
-      <div className="flex flex-1 items-center gap-3 drop-shadow-lg w-full">
-        <label className="text-sm font-medium text-black">From:</label>
-        <input
-          type="date"
-          className="p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={fromDate}
-          onChange={(e) => setFromDate(e.target.value)}
-        />
-      </div>
+        {/* Date Range Inputs */}
+        <div className="flex flex-wrap items-center justify-between my-4 gap-6">
+          <div className="flex items-center flex-1 gap-2">
+            <label className="text-sm font-medium text-black">From Date:</label>
+            <input
+              type="date"
+              className="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={fromDate}
+              onChange={(e) => setFromDate(e.target.value)}
+            />
+          </div>
 
-      <div className="flex flex-1 items-center gap-3 drop-shadow-lg w-full">
-        <label className="text-sm font-medium text-black">To:</label>
-        <input
-          type="date"
-          className="p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={toDate}
-          onChange={(e) => setToDate(e.target.value)}
-        />
-      </div>
-    </div>
-  </div>
-</div>
-
+          <div className="flex items-center flex-1 gap-2">
+            <label className="text-sm font-medium text-black">To Date:</label>
+            <input
+              type="date"
+              className="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={toDate}
+              onChange={(e) => setToDate(e.target.value)}
+            />
+          </div>
+        </div>
 
         {/* Pie Chart */}
-        <div className="p-4 bg-gray-50 border border-gray-300 rounded-md drop-shadow-lg">
+        <div className="p-4 bg-gray-50 border border-gray-300 rounded-md">
           <div className="flex justify-center">
-            <div className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[380px] xl:w-[380px]">
+            <div className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] xl:w-[450px]">
               <Pie data={currentData} />
             </div>
           </div>
@@ -104,10 +101,9 @@ const Internal = () => {
       </div>
 
       {/* Right: Table Section */}
-      <div className="flex-1 mt-0">
-      <h3 className="text-lg font-bold text-center  text-black">Compliance Data Table</h3>
-
-        <div className="p-2 bg-gray-50 mt-8 border border-gray-300 rounded-md mt-2">
+      <div className="flex-1">
+        <div className="p-4 bg-gray-50 border border-gray-300 rounded-md">
+          <h3 className="text-lg font-bold text-center mb-4 text-black">Compliance Data Table</h3>
           <table className="w-full border-collapse border border-gray-200">
             <thead>
               <tr className="bg-gray-100">
