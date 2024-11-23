@@ -68,7 +68,7 @@ const Internal = () => {
     </select>
 
     {/* Date Range Inputs */}
-    <div className="flex flex-col lg:flex-row gap-6 w-full ml-2">
+    <div className="flex flex-col lg:flex-row gap-6 w-full ml-2 drop-shadow-lg w-full">
       <div className="flex flex-1 items-center gap-3 drop-shadow-lg w-full">
         <label className="text-sm font-medium text-black">From:</label>
         <input
@@ -79,7 +79,7 @@ const Internal = () => {
         />
       </div>
 
-      <div className="flex flex-1 items-center gap-3 drop-shadow-lg w-full">
+      <div className="flex flex-1 items-center  drop-shadow-lg w-full gap-7 lg:gap-3 ">
         <label className="text-sm font-medium text-black">To:</label>
         <input
           type="date"
