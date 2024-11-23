@@ -357,14 +357,10 @@ export default function Navbar() {
                         <div className="relative">
                         <ToggleButton label="Dashboard" isOpen={activeDropdown === 'dashboard'} onToggle={() => toggleDropdown('dashboard')} />
                             {activeDropdown === 'dashboard' && (
-        <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
-                                           <a href="/dashboard/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200">Submenu 1</a>
-                    <a href="/compliance/submenu1"                                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
-                    >
-Statutory Requirement
-
-</a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
+                        <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
+                                           <a href="/dashboard/StatutoryRequirement"  className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">
+                            Statutory Requirement</a>
+                    <a href="/dashboard/Internal"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"
                     >
                     Internal Control</a>
                               
