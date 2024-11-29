@@ -373,21 +373,21 @@ export default function Navbar() {
                             {activeDropdown === 'reports' && (
         <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
                                          
-                   <a href="\reports\closedCompliances"                 className="flex justify-center items-start text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"> Pending / Closed Compliances</a>
-                    <a href="/reports/EventChecklist"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Event Checklist
+                   <a href="/reports/closedCompliances"                 className="flex justify-center items-start text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"> Pending / Closed Compliances</a>
+                    {/* <a href="/reports/EventChecklist"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Event Checklist
                     </a>
-                    <a href="/reports/actionPlanReport"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Global Search
+                    <a href=""                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Global Search
                     </a>
-                    <a href="\reports\eventOccurenceReport"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Event Occurrence Report
+                    <a href=""                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Event Occurrence Report
                     </a>
-                    <a href="\reports\actionPlanReport"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Action Plan Report
+                    <a href=""                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Action Plan Report
                     </a>
-                    <a href="src\app\reports\ownerWiseComplianceCount"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105" >View Ownerwise Compliace Count
+                    <a href=""                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105" >View Ownerwise Compliace Count
                     </a>
-                    <a href="src\app\reports\penderCheckerVerification"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Pending Checker Verification
+                    <a href=""                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Pending Checker Verification
                     </a>
-                    <a href="src\app\reports\userWiseSummary"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">User Wise Summry Report
-                    </a>
+                    <a href=""                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">User Wise Summry Report
+                    </a> */}
                                    
                                 </div>
                             )}
