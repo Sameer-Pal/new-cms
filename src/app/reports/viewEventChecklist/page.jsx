@@ -1,9 +1,9 @@
 import React from 'react'
 
-const viewEventChecklist = () => {
+const ViewEventChecklist = () => {
   return (
     <div>page</div>
   )
 }
 
-export default viewEventChecklist
+export default ViewEventChecklist
