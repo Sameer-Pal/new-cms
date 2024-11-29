@@ -104,8 +104,8 @@ function MobileNav({ open, setOpen }) {
             <div>
                 <ToggleButton label="Dashboard" isOpen={activeDropdown === 'dashboard'} onToggle={() => toggleDropdown('dashboard')} />
                 <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'dashboard' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
-                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/overview">Overview</a>
-                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/stats">Stats</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform"  href="/dashboard/StatutoryRequirement" >Statutory Control</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/Internal"  >Internal Control</a>
                 </div>
             </div>
     
@@ -113,8 +113,7 @@ function MobileNav({ open, setOpen }) {
             <div>
                 <ToggleButton label="Reports" isOpen={activeDropdown === 'reports'} onToggle={() => toggleDropdown('reports')} />
                 <div className={`flex flex-col ml-6 transition-all duration-300 ${activeDropdown === 'reports' ? 'max-h-screen opacity-100 delay-75' : 'max-h-0 opacity-0 overflow-hidden transition-opacity duration-300'}`}>
-                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/overview">Overview</a>
-                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="/dashboard/stats">Stats</a>
+                    <a className="text-lg font-normal my-2 text-white hover:text-yellow-500 hover:scale-110 transition duration-300 ease-in-out transform" href="\reports\closedCompliances">  Open/Closed Compliance</a>
                 </div>
             </div>
     
@@ -373,22 +372,22 @@ export default function Navbar() {
                         <ToggleButton label="Reports" isOpen={activeDropdown === 'reports'} onToggle={() => toggleDropdown('reports')} />
                             {activeDropdown === 'reports' && (
         <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#262626] shadow-lg rounded-md z-10 w-auto overflow-hidden opacity-0 scale-95 transition-all duration-300 ease-out visible opacity-100 scale-100">
-                                           <a href="/compliance/submenu1"                 className="flex justify-center items-start text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Submenu 1</a>
+                                         
+                   <a href="\reports\closedCompliances"                 className="flex justify-center items-start text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"> Pending / Closed Compliances</a>
                     <a href="/reports/EventChecklist"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Event Checklist
                     </a>
-                    <a href="/reports/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Global Search
+                    <a href="/reports/actionPlanReport"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Global Search
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Event Occurrence Report
+                    <a href="\reports\eventOccurenceReport"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Event Occurrence Report
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Action Plan Report
+                    <a href="\reports\actionPlanReport"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">Action Plan Report
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105" >View Ownerwise Compliace Count
+                    <a href="src\app\reports\ownerWiseComplianceCount"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105" >View Ownerwise Compliace Count
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Pending Checker Verification
+                    <a href="src\app\reports\penderCheckerVerification"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">View Pending Checker Verification
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">User Wise Summry Report
+                    <a href="src\app\reports\userWiseSummary"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105">User Wise Summry Report
                     </a>
-                    <a href="/compliance/submenu1"                 className="flex justify-center items-center text-gray-100 hover:bg-white hover:text-black p-2 whitespace-nowrap transition duration-200 transform hover:scale-105"></a>
                                    
                                 </div>
                             )}

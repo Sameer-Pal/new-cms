@@ -125,7 +125,7 @@ const Calendar = () => {
 <div className="min-h-screen text-white p-4 m-2 border border bg-[#FFFFFF] rounded-xl">
       <div className="flex flex-col lg:flex-row w-full px-4 lg:px-10 justify-start items-start gap-8">
         {/* Event List Section */}
-        <div className="w-full lg:w-3/12 py-2 px-4 bg-[#F5F5F5] rounded-lg mt-5 shadow-lg">
+        <div className="w-full lg:w-3/12 py-2 px-4 bg-[#F5F5F5] rounded-lg mt-8 shadow-lg">
   {/* Compliances Text */}
   <div className="py-5 text-2xl font-extrabold text-center text-[#262626] mb-5  drop-shadow-md">
     Compliances
@@ -143,7 +143,7 @@ const Calendar = () => {
         >
           {event.title}
           <br />
-          <label className="text-slate-950">
+          <label className="text-slate-950 ">
             {formatDate(event.start, {
               year: "numeric",
               month: "short",
@@ -161,9 +161,9 @@ const Calendar = () => {
 
         {/* Calendar Section */}
         <div className="w-full  lg:w-9/12 mt-8 ">
-          <div className="flex flex-col items-center justify-center gap-4 mb-4 py-2 shadow-xl bg-[#F5F5F5] border-b border-gray-300 ">
+          <div className="flex flex-col items-center justify-center gap-4 mb-4 py-2 shadow-xl bg-[#F5F5F5] border-b rounded-xl border-gray-300 ">
             {/* Month and Year Selectors */}
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4  ">
               <select
                 value={selectedMonth}
                 onChange={(e) => setSelectedMonth(parseInt(e.target.value))}

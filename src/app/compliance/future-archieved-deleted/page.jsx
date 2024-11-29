@@ -174,7 +174,7 @@ const FutureArchievedDeleted = () => {
         {/* Show All Button */}
         <button
           onClick={() => console.log("Show all data")} // Implement show all logic here
-          className="mb-2 sm:mb-0 sm:ml-4 px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 transition duration-200"
+          className="mb-2 sm:mb-0 sm:ml-4 px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 transition duration-200 text-nowrap	"
         >
           Show All
         </button>
@@ -182,7 +182,7 @@ const FutureArchievedDeleted = () => {
         {/* Open Compliance Search Button */}
         <button
           onClick={handleOpenModal}
-          className="sm:ml-4 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition duration-200"
+          className="sm:ml-4 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition duration-200 text-nowrap"
         >
           Advanced Search
         </button>
