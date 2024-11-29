@@ -6,4 +6,4 @@ const ViewEventChecklist = () => {
   )
 }
 
-export default ViewEventChecklist
+export default ViewEventChecklist;
